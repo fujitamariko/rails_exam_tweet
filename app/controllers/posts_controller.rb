@@ -5,5 +5,6 @@ class PostsController < ApplicationController
         @post = Post.new
     end
     def create
+        Post.create(content: params[:post][:content])
     end
 end
