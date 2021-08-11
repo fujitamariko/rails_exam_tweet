@@ -24,6 +24,11 @@ class PostsController < ApplicationController
     end
     def update
         @post = Post.find(params[:id])
+        if @post.update(post_params)
+            redirect_to posts_path, notice: "つぶやきを編集しました！"
+        else
+            render :edit
+        end
     end
     private
     def post_params
