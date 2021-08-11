@@ -7,10 +7,14 @@ class PostsController < ApplicationController
         @post = Post.new
     end
     def create
-        # モデルにDB操作の命令を出す
-        Post.create(post_params)
-        # リダイレクトを行う
-        redirect_to new_post_path
+        @post = Post.new(post_params)
+        if @post.save
+            # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
+            redirect_to new_post_path, notice: "つぶやき投稿しました！"
+        else
+            # 入力フォームを再描画します。
+            render :new
+        end
     end
     def show
         @post = Post.find(params[:id])
