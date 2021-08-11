@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     def index
+        @posts = Post.all
     end
     def new
         # ビューにデータを渡す（インスタンス変数を定義する）
