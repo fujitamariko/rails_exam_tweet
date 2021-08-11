@@ -1,2 +1,15 @@
 <h1>ブログ一覧</h1>
-<%= @posts %>
+<table>
+  <tr>
+    <th>内容</th>
+    <th>作成日時</th>
+    <th>更新日時</th>
+  </tr>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.content %></td>
+    <td><%= post.created_at %></td>
+    <td><%= post.updated_at %></td>
+  </tr>
+<% end %>
+</table>
