@@ -6,5 +6,6 @@ class PostsController < ApplicationController
     end
     def create
         Post.create(content: params[:post][:content])
+        redirect_to "/posts/new"
     end
 end
