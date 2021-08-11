@@ -10,6 +10,7 @@
     <td><%= post.content %></td>
     <td><%= post.created_at %></td>
     <td><%= post.updated_at %></td>
+    <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
   </tr>
 <% end %>
 </table>
