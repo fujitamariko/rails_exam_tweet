@@ -12,6 +12,8 @@ class PostsController < ApplicationController
         # リダイレクトを行う
         redirect_to new_post_path
     end
+    def show
+    end
     private
     def post_params
         params.require(:post).permit(:content)
